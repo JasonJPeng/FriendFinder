@@ -1,7 +1,9 @@
+// fs.readFile("./app/data/friends.js", "utf8", function(err, data) { obj = JSON.parse(data); console.log(obj)});
 // Dependencies
 // =============================================================
 var express = require("express");
 var path = require("path");
+var fs = require('fs');
 
 // Sets up the Express App
 // =============================================================
@@ -12,31 +14,12 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Star Wars Characters (DATA)
-// =============================================================
-var characters = [
-  {
-    routeName: "yoda",
-    name: "Yoda",
-    role: "Jedi Master",
-    age: 900,
-    forcePoints: 2000
-  },
-  {
-    routeName: "darthmaul",
-    name: "Darth Maul",
-    role: "Sith Lord",
-    age: 200,
-    forcePoints: 1200
-  },
-  {
-    routeName: "obiwankenobi",
-    name: "Obi Wan Kenobi",
-    role: "Jedi Master",
-    age: 55,
-    forcePoints: 1350
-  }
-];
+var friends = [];
+fs.readFile( __dirname + "/app/data/friends.js", "utf8", function(err, data) {
+    // console.log(__dirname);
+     friends = JSON.parse(data);
+});
+
 
 // Routes
 // =============================================================
@@ -53,8 +36,9 @@ app.get("/add", function(req, res) {
 
 // Displays all possible friends
 app.get("/api/friends", function(req, res) {
-  return res.json(characters);
+  return res.json(friends);
 });
+
 
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname , "public/", "home.html"));
