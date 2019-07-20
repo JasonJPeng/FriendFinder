@@ -1,0 +1,1 @@
+try __dirname  and path.join()  instead of using "/" 

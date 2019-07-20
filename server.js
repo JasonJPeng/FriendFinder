@@ -13,6 +13,7 @@ var PORT = process.env.PORT || 3000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('public'))
 
 var friends = [];
 fs.readFile( __dirname + "/app/data/friends.js", "utf8", function(err, data) {
@@ -23,6 +24,14 @@ fs.readFile( __dirname + "/app/data/friends.js", "utf8", function(err, data) {
 
 // Routes
 // =============================================================
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname , "public/", "home.html"));
+  });
+
+//   app.get("/:page", function(req, res) {
+//     var page = req.params.page;  
+//     res.sendFile(path.join(__dirname , "public/", page));
+//   });  
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/survey", function(req, res) {
@@ -44,17 +53,11 @@ app.get("*", function(req, res) {
 app.post("/api/friends", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
-  var newCharacter = req.body;
-
-  // Using a RegEx Pattern to remove spaces from newCharacter
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+  var mySurvey = req.body;  
 //   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
+  friends.push(mySurvey);
 
-  console.log(newCharacter);
-
-  friends.push(newCharacter);
-
-  res.json(newCharacter);
+  res.json(friends[1]);
 });
 
 // Starts the server to begin listening

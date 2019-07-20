@@ -6,8 +6,8 @@
 }
 ,
 {
-    "name": "Tom Hank",
-    "image":"httpjjjjjjjjj",
+    "name": "Tom Hanks",
+    "image":"http://www.gstatic.com/tv/thumb/persons/62982/62982_v9_bb.jpg",
     "scores": [5, 1, 2, 4, 5, 5, 4, 3, 3, 4 ] 
 }
 ,
