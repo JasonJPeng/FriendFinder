@@ -30,10 +30,6 @@ app.get("/survey", function(req, res) {
   });
 
 
-app.get("/add", function(req, res) {
-  res.sendFile(path.join(__dirname, "add.html"));
-});
-
 // Displays all possible friends
 app.get("/api/friends", function(req, res) {
   return res.json(friends);
@@ -44,21 +40,19 @@ app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname , "public/", "home.html"));
   });
 
-
-
 // Create New Characters - takes in JSON input
-app.post("/api/characters", function(req, res) {
+app.post("/api/friends", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
   var newCharacter = req.body;
 
   // Using a RegEx Pattern to remove spaces from newCharacter
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
+//   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
 
   console.log(newCharacter);
 
-  characters.push(newCharacter);
+  friends.push(newCharacter);
 
   res.json(newCharacter);
 });
