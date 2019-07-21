@@ -5,6 +5,9 @@ In order to reduce the working load on the server and keep the cleanness of the 
 
 The algorithm is calculate the compatibility is  as follows:
 
-&sigma<sub>0
+
+Sum<sub>i=1-10</sub>| X<sub>ij</sub> - X<sub>i0</sub>| 
+
+where X<sub> ij</sub> is the ith score of the jth people and X<sub> i0</sub>
 
 
