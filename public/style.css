@@ -1,5 +1,14 @@
 body {
-    margin: 10px;
+    color: #777777;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size:12pt;
+    background-color: #ffffff; 
+    width:580px;
+    margin:auto;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 #submit {
@@ -19,6 +28,9 @@ body {
 
 #inputInfo {
     margin: 20px;
+}
+#inputInfo input {
+    width:100%;
 }
 img {
     object-fit: cover;

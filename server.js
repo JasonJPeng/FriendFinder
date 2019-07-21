@@ -1,3 +1,25 @@
+//
+// Find the most matched friend,and return JSON
+// calculate the score for each friends
+//   score calculation:
+//     score = absolue_value(diff (friend_array [] - me_array[]) )
+//     arrScores = array of all friends sacores
+//
+function matchFriends(me, others) {
+  var arrScores = []; //
+  friends.forEach( e => {
+    var score = e.scores.map((e,i)=>{return Math.abs((e - me.scores[i]))}).reduce((x,y)=>x+y, 0);
+    arrScores.push(score);
+  })
+  console.log(arrScores);
+  var minScore = Math.min(...arrScores);
+  var i = arrScores.indexOf(minScore);
+
+   return others[i];
+}
+
+
+
 // fs.readFile("./app/data/friends.js", "utf8", function(err, data) { obj = JSON.parse(data); console.log(obj)});
 // Dependencies
 // =============================================================
@@ -55,9 +77,9 @@ app.post("/api/friends", function(req, res) {
   // This works because of our body parsing middleware
   var mySurvey = req.body;  
 //   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
-  friends.push(mySurvey);
+  // friends.push(mySurvey);
 
-  res.json(friends[1]);
+  res.json(matchFriends(mySurvey, friends));
 });
 
 // Starts the server to begin listening
