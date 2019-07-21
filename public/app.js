@@ -1,14 +1,14 @@
 strQ = [
-  "aaaaaaaaaaaaaa",
-  "bbbbbbbbbbbbbb",
-  "ccccccccccccccc",
-  "dddddddddddddd",
-  "eeeeeeeeeeeeee",
-  "ffffffffffffff",
-  "gggggggggggggg",
-  "hhhhhhhhhhhhhh",
-  "iiiiiiiiiiiiii",
-  "jjjjjjjjjjjjjjj"
+  "Do you believe love changes you? ",
+  "Do you think people should change themselves to find love?",
+  "Do you think the way your family loves has affected the way you love?",
+  "Do you believe you can be friends with someone you loved in the past?",
+  "Is sex more of a physical connection for you, or emotional?",
+  "Have you ever loved someone who you hoped would change for you?",
+  "Do you believe vulnerability is a good thing when it comes to love?",
+  "Do you believe people can change if they love someone?",
+  "Do you believe in love at first sight?",
+  "Do you believe in love at first sight?"
 ];
 
 
