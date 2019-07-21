@@ -1,5 +1,5 @@
 body {
-    color: #777777;
+    color: #222222;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     font-size:12pt;
     background-color: #ffffff; 
@@ -10,6 +10,12 @@ body {
 * {
     box-sizing: border-box;
 }
+
+
+.jumbotron {
+    background-image: url("./img/jumbotron_bg.jpg");
+    background-size: cover;
+  }
 
 #submit {
     margin: 20px;
