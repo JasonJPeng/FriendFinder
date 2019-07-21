@@ -16,3 +16,10 @@ body {
 .answer input {
     margin: 0px 15px;
 }
+
+#inputInfo {
+    margin: 20px;
+}
+img {
+    object-fit: cover;
+}
