@@ -41,3 +41,8 @@ img {
       margin:30px;
 }
 
+#warning {
+  color: white;
+  background-color: red;  
+  font-size: 14pt; 
+}

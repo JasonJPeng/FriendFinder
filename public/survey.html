@@ -27,8 +27,8 @@
     <h1>Please fill out the survey form</h1>
     <form>
     <div id = "inputInfo">
-        Your Name (required): <input type="input" name="name">   <br> 
-        Link to your photo image (required): <input type="input" name="image">
+        Your Name (required): <input type="input" name="name" required>   <br> 
+        Link to your photo image (required): <input type="input" name="image" required>
     </div>    
     <div id = "previewImg">
         <img src="">
@@ -63,6 +63,7 @@
 
     <!-- Submit Button -->
     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+    <span id="warning"></span>
    </form>
 <!-- Modal -->
 <div id="results-modal" class="modal fade" role="dialog">

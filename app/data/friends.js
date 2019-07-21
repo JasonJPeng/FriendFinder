@@ -24,7 +24,7 @@
 }
 ,
 {
-    "name": "Rose McGowanWill Smith",
+    "name": "Will Smith",
     "image":"https://s-media-cache-ak0.pinimg.com/236x/72/6d/29/726d29eec4cc4141f38ede42cab669ee.jpg",
     "scores": [2, 5, 2, 4, 1, 5, 2, 3, 1, 4 ] 
 }

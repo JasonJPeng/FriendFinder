@@ -18,7 +18,7 @@ $( document ).ready(function() {
     // var userData = {"name": "Jason", "image": "hhhhhhhh",
     //     "scores":[1,2,3,4,5,4,3,2,1,4]                               
     // };
-
+    
 
 var htmlQesAns ="";
 
@@ -54,10 +54,10 @@ $("input[name='image']").change(function(){
 
 $("#submit").on("click", function(event) {
     event.preventDefault();
-
+    $("#warning").html("");
     var userData = {
-        name: $("input[name='name']").val(),
-        image: $("input[name='image']").val(),
+        name: $("input[name='name']").val().trim(" "),
+        image: $("input[name='image']").val().trim(" "),
         scores: [
           $("input[name='1']:checked").val(),
           $("input[name='2']:checked").val(),
@@ -71,7 +71,28 @@ $("#submit").on("click", function(event) {
           $("input[name='10']:checked").val()
         ]
       };
+    
+///////   Validate the form ============      
+    if (userData.name === "" ) {
+      $("#warning").html("Please enter your name ");
+      return;
+    }   
+    
+    if (userData.image === "") {
+      $("#warning").html("Please enter the link to your photo  ");
+      return;
+    } 
+    
+    console.log(userData.scores);
 
+    for (var iErr = 0; iErr < userData.scores.length; iErr++ ) {
+       if (typeof userData.scores[iErr]  === 'undefined') {
+        $("#warning").html("Please answer question # " + (iErr + 1) );
+         return;  
+       }
+    }
+
+/////// =================================    
     
 
     $.post("/api/friends", userData, function(data) {

@@ -11,7 +11,7 @@ function matchFriends(me, others) {
     var score = e.scores.map((e,i)=>{return Math.abs((e - me.scores[i]))}).reduce((x,y)=>x+y, 0);
     arrScores.push(score);
   })
-  console.log(arrScores);
+  // console.log(arrScores);
   var minScore = Math.min(...arrScores);
   var i = arrScores.indexOf(minScore);
 
@@ -77,9 +77,9 @@ app.post("/api/friends", function(req, res) {
   // This works because of our body parsing middleware
   var mySurvey = req.body;  
 //   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
-  // friends.push(mySurvey);
-
+     
   res.json(matchFriends(mySurvey, friends));
+  // friends.push(mySurvey);
 });
 
 // Starts the server to begin listening
