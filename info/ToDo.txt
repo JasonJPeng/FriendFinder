@@ -1,1 +1,10 @@
 try __dirname  and path.join()  instead of using "/" 
+
+Upload to Heroku
+
+See all possible friends 
+
+MM MF FM .......
+
+background for jumbotron
+
