@@ -5,6 +5,7 @@ body {
     background-color: #ffffff; 
     width:580px;
     margin:auto;
+    background-image: url("./img/background-1.png");
 }
 
 * {
@@ -13,7 +14,7 @@ body {
 
 
 .jumbotron {
-    background-image: url("./img/jumbotron_bg.jpg");
+    background-image: url("./img/gradient1.jpg");
     background-size: cover;
   }
 
