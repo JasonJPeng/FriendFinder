@@ -47,7 +47,9 @@ img {
       /* border: 2px solid red; */
       float: left;
       margin:30px;
+      font-size:14pt;
 }
+
 
 #warning {
   color: white;

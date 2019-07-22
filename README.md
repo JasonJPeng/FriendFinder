@@ -40,7 +40,7 @@ After calculating the compatibility of all candidates against the current user, 
 
 ---
 
-This program is hosted on the [_**Heroku server**_](https://warm-hollows-94004.herokuapp.com)
+This program is hosted on the [_**Heroku server**_](https://warm-hollows-94004.herokuapp.com) Please click and play.
 
 
 
