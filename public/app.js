@@ -52,6 +52,23 @@ $("input[name='image']").change(function(){
     }   
 })
 
+$("#viewAll").on("click", function(event) {
+  event.preventDefault();
+  $.get("/api/friends", function (data) {
+    
+    data.forEach( function (e) {
+    htmlCode = 
+    `<figure class="figure">
+    <img src="${e.image}" class="figure-img img-fluid rounded friendPhoto" alt="">
+    <figcaption class="figure-caption">${e.name.substring(0,16)}</figcaption>
+    </figure>  
+    `
+    $("#displayAll").prepend($(htmlCode));
+    })
+     
+  })
+}) 
+
 $("#submit").on("click", function(event) {
     event.preventDefault();
     $("#warning").html("");

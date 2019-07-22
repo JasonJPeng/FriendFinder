@@ -18,6 +18,21 @@ function matchFriends(me, others) {
    return others[i];
 }
 
+//
+// If me is a new object, add to the friends list;
+// otehrwise, replace the existing
+// based on the first 20 characters of the name
+function add2List(me, friends) {
+   var myName = me.name.substring(0, 20).toLowerCase();
+
+   for (var i=0; i<friends.length; i++) {
+       if (myName === friends[i].name.substring(0,20).toLowerCase()) {
+          friends[i] = me;
+          return;
+       } 
+   }
+   friends.push(me);
+}
 
 
 // fs.readFile("./app/data/friends.js", "utf8", function(err, data) { obj = JSON.parse(data); console.log(obj)});
@@ -79,6 +94,8 @@ app.post("/api/friends", function(req, res) {
 //   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
      
   res.json(matchFriends(mySurvey, friends));
+
+  add2List(mySurvey, friends);
   // friends.push(mySurvey);
 });
 
