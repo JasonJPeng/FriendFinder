@@ -1,5 +1,6 @@
 var path = require("path");
-var fs = require('fs');
+// var fs = require('fs');
+var friends = require(path.join(__dirname, "..", "app", "data", "friends.js"));
 
 //
 // Find the most matched friend,and return JSON
@@ -39,11 +40,11 @@ function matchFriends(me, others) {
   
 
 
-var friends = [];
-fs.readFile( __dirname + "/../app/data/friends.js", "utf8", function(err, data) {
-    // console.log(__dirname);
-     friends = JSON.parse(data);
-});
+// var friends = [];
+// fs.readFile( __dirname + "/../app/data/friends.js", "utf8", function(err, data) {
+//     // console.log(__dirname);
+//      friends = JSON.parse(data);
+// });
 
 module.exports = function(app) {
     app.get("/api/friends", function(req, res) {

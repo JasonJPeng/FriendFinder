@@ -11,8 +11,6 @@ strQ = [
   "Am I the only judge of all that concerns me?"
 ];
 
-
-
 $( document ).ready(function() {
     console.log( "ready!" );
     // var userData = {"name": "Jason", "image": "hhhhhhhh",

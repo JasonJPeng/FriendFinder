@@ -42,6 +42,35 @@ After calculating the compatibility of all candidates against the current user, 
 
 This program is hosted on the [_**Heroku server**_](https://warm-hollows-94004.herokuapp.com) Please click and play.
 
+---
 
+## File Structure:
 
+### routing directory: Two routing files are created -
+  - routings/apiRoutings.js 
+  - routings/htmlRoutings.js
+
+All APIs are created in apiRouting:
+```
+module.exports = function(app) {
+    app.get("/api/friends", function(req, res) {....}
+    app.post("/api/friends", function(req, res) {......
+
+}    
+```
+We can keep the server file very clean:
+
+```
+require(path.join(__dirname, "routings", "htmlRoutes.js") )(app);  
+require(path.join(__dirname, "routings", "apiRoutes.js") )(app); 
+
+app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
+```
+
+### public directory: This code makes directory _public_ as html _root_ directory. Any html files can be hosted here.
+```app.use(express.static('public'))```
+  
+
+ 
 

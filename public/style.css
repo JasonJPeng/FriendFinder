@@ -24,10 +24,11 @@ body {
 
 .question {
     margin: 20px 0 0 0;
-    font-size: 16pt;
+    font-size: 14pt;
 }
 .answer {
     margin: 5px;
+    font-size: 10pt;
 }
 
 .answer input {
@@ -47,6 +48,10 @@ img {
       /* border: 2px solid red; */
       float: left;
       margin:30px;
+}
+
+.modal-body h2 {
+    font-size: 16pt;
 }
 
 #warning {

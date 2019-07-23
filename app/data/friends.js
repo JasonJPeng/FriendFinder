@@ -1,4 +1,4 @@
-[
+friends = [
 {
     "name": "Madonna",
     "image":"https://myhero.com/content/images/thumbs/0125101_madonna-louise-ciccone.jpeg",
@@ -54,3 +54,5 @@
 
 
 ]
+
+module.exports = friends;
